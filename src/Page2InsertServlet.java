@@ -17,14 +17,14 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class Page1Servlet
  */
-@WebServlet("/page2")
-public class Page2Servlet extends HttpServlet {
+@WebServlet("/page2Insert")
+public class Page2InsertServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Page2Servlet() {
+    public Page2InsertServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -38,9 +38,9 @@ public class Page2Servlet extends HttpServlet {
 		final String id = "OUBO";
 		final String pass = "TOUSEN";
 		
-		String sEname = request.getParameter("email");
-		String sNumA = request.getParameter("numa");
-		String sNumB = request.getParameter("numb");
+		String sEname = (String)request.getAttribute("email");
+		String sNumA = (String)request.getAttribute("numa");
+		String sNumB = (String)request.getAttribute("numb");
 
 		try {
 			

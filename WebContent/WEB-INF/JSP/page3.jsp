@@ -7,6 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<a href="./PageTousen">当選者リスト</a>
 <%
 String sKigen = (String)request.getAttribute("KIGEN");
 %>
