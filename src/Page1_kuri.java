@@ -23,7 +23,7 @@ public class Page1_kuri extends HttpServlet {
         super();
         // TODO Auto-generated constructor stub
     }
-
+//aaaa
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */

@@ -44,7 +44,7 @@ background-color:#800000;
 <h2>仙台駅前第一デパート</h2>
 	<style type="text/css">
 	h1{
-	font-size: 20px;
+	font-size: 10px;
 	font-family: "Courier New" , Courier, monospce;
 	color:#ffffff;
 	}
