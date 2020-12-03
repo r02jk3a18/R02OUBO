@@ -54,6 +54,7 @@ public class Page2InsertServlet extends HttpServlet {
 			st.setString(2, sNumA);
 			st.setString(3, sNumB);
 			
+			
 			st.executeUpdate();
 			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/JSP/page2.jsp");
 			rd.forward(request, response);
