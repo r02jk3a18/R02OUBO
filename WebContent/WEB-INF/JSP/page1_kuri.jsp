@@ -11,7 +11,7 @@
 <body>
 
 <div>
-<p id="sample"> MERRY.CHRISTMS</p>
+<p id="sample"> 　MERRY.CHRISTMS　</p>
 </div>
 
 
