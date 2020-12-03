@@ -9,7 +9,7 @@
 
 </head>
 <body>
-<img src="">
+
 <div>
 <p id="sample"> MERRY.CHRISTMS</p>
 </div>
@@ -44,7 +44,7 @@ background-color:#800000;
 <h2>仙台駅前第一デパート</h2>
 	<style type="text/css">
 	h1{
-	font-size: 10px;
+	font-size: 9px;
 	font-family: "Courier New" , Courier, monospce;
 	color:#ffffff;
 	}
