@@ -12,14 +12,14 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class Page1Servlet
  */
-@WebServlet("/page1")
-public class Page1Servlet extends HttpServlet {
+@WebServlet("/Sinnnyuugaku")
+public class SinnnyuugakuServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Page1Servlet() {
+    public SinnnyuugakuServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -28,9 +28,7 @@ public class Page1Servlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String diff = (String)request.getAttribute("sDiff");
-		request.setAttribute("sDiff", diff);
-		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/JSP/page1.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/JSP/Sinnnyuugaku.jsp");
 		rd.forward(request, response);
 	}
 

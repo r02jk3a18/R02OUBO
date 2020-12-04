@@ -43,12 +43,13 @@ public class IndexServlet extends HttpServlet {
 			Connection connection=DriverManager.getConnection(url,id,pass);
 			PreparedStatement st = 
 					connection.prepareStatement(
-							"Select SYSDATE-KIGEN as DIFF From Kigen"
+							"Select trunc(SYSDATE-KIGEN) as DIFF From Kigen"
 						);
 			ResultSet rs = st.executeQuery();
 			rs.next();
 			String diff = rs.getString("DIFF");
 			if(diff.charAt(0)=='-') {
+				request.setAttribute("sDiff", diff);
 				RequestDispatcher rd = request.getRequestDispatcher("/page1");
 				rd.forward(request, response);
 				
