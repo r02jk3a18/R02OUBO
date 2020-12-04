@@ -28,7 +28,9 @@ public class Page1Servlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/JSP/BarenFile.jsp");
+		String diff = (String)request.getAttribute("sDiff");
+		request.setAttribute("sDiff", diff);
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/JSP/page1.jsp");
 		rd.forward(request, response);
 	}
 
