@@ -28,7 +28,7 @@ public class Page1_kuri extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/JSP/page1_kuri.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/JSP/.jsp");
 		rd.forward(request, response);
 		
 	}

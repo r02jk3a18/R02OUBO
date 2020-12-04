@@ -56,13 +56,13 @@ background-color:#800000;
 	
 <form method="post" action="/Page_kuri">
 応募者のメールアドレス<input type="email" name="email" placeholder="メールアドレスを入力" /><br/>
-
+<div class="flowchart">　</div>	
 
 7桁の数字A　　　　　 　<input type="number" name="numa" placeholder="7桁の数字A" /><br/>
-
+<div class="flowchart">　</div>	
 
 7桁の数字B　　　　　 　<input type="number" name="numb" placeholder="7桁の数字B" /><br/>
-
+<div class="flowchart">　</div>	
 
 <input type="submit" value="登録する" />
 </form>
@@ -82,13 +82,7 @@ input::-ms-input-placeholder {
   color: red;
 }
 
-input{
 
- text-indent: 1em;
-  width: 100%;
-
-
-}
 	</style>
 	<div class="flowchart">　</div>	
 	<div class="flowchart">　</div>	
@@ -113,9 +107,33 @@ color:#ffff00;
 color:#008000;
 
 }
+</style>
+
+
+
+<div id="nav">
+<from action="BarenFile.jsp"><input type="submit" value="バレンタインデー" /></from>
+<input type="submit" value="新入学セール" />
+
+
+
+
+
+
+</div>
+
+
+<style type="text/css">
+
+}
+#nav{
+	
+	
+
+}
+
 
 
 </style>
-
 </body>
 </html>
