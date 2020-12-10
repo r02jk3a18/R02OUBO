@@ -17,14 +17,14 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class Page1Servlet
  */
-@WebServlet("/page2Insert")
-public class Page2InsertServlet extends HttpServlet {
+@WebServlet("/KanriTousen2")
+public class KanriTousen2Servlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Page2InsertServlet() {
+    public KanriTousen2Servlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -38,25 +38,26 @@ public class Page2InsertServlet extends HttpServlet {
 		final String id = "OUBO";
 		final String pass = "TOUSEN";
 		
-		String sEname = (String)request.getAttribute("email");
-		String sNumA = (String)request.getAttribute("numa");
-		String sNumB = (String)request.getAttribute("numb");
+	    request.setCharacterEncoding("UTF-8");
+
+		String sNumA = request.getParameter("numa");
+		String sNumB = request.getParameter("numb");
+		String sText = request.getParameter("text");
 
 		try {
-			
 			Class.forName(driverName);
 			Connection connection=DriverManager.getConnection(url,id,pass);
 			PreparedStatement st = 
 					connection.prepareStatement(
-							"Insert into OUBO(EMAIL,NUMA,NUMB,CREATED) Values(?,?,?,SYSDATE)"
+							"Insert into TOUSEN Values(?,?,?)"
 						);
-			st.setString(1, sEname);
-			st.setString(2, sNumA);
-			st.setString(3, sNumB);
 			
+			st.setString(1, sNumA);
+			st.setString(2, sNumB);
+			st.setString(3, sText);
 			
 			st.executeUpdate();
-			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/JSP/page2.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/JSP/KanriTousen2.jsp");
 			rd.forward(request, response);
 			
 		}catch(SQLException e) {
