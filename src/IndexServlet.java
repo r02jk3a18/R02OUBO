@@ -43,19 +43,50 @@ public class IndexServlet extends HttpServlet {
 			Connection connection=DriverManager.getConnection(url,id,pass);
 			PreparedStatement st = 
 					connection.prepareStatement(
-							"Select trunc(SYSDATE-KIGEN) as DIFF From Kigen"
+							"Select trunc(KAISI-SYSDATE) as DIFF From Kigen"
 						);
 			ResultSet rs = st.executeQuery();
 			rs.next();
 			String diff = rs.getString("DIFF");
 			if(diff.charAt(0)=='-') {
 				request.setAttribute("sDiff", diff);
-				RequestDispatcher rd = request.getRequestDispatcher("/page1");
+				RequestDispatcher rd = request.getRequestDispatcher("/Page1_kuri");
 				rd.forward(request, response);
 				
 			}else {
-				RequestDispatcher rd = request.getRequestDispatcher("/page3");
-				rd.forward(request, response);
+				
+				try {
+					Class.forName(driverName);
+					Connection connection2=DriverManager.getConnection(url,id,pass);
+					PreparedStatement st2 = 
+							connection2.prepareStatement(
+									"Select trunc(SYSDATE-KIGEN) as DIFF From Kigen"
+								);
+					ResultSet rs2 = st2.executeQuery();
+					rs2.next();
+					String diff2 = rs2.getString("DIFF");
+					if(diff2.charAt(0)=='-') {
+						request.setAttribute("sDiff", diff2);
+						RequestDispatcher rd = request.getRequestDispatcher("/page1");
+						rd.forward(request, response);
+						
+					}else {
+						RequestDispatcher rd = request.getRequestDispatcher("/page3");
+						rd.forward(request, response);
+						
+					}
+				}catch(SQLException e) {
+					System.out.println("SQLException");
+					response.getWriter().println("SQLException");
+					e.printStackTrace();
+					e.printStackTrace(response.getWriter());
+				} catch (ClassNotFoundException e) {
+					System.out.println("ClassNotFoundException");
+					response.getWriter().println("ClassNotFoundException");
+					e.printStackTrace();
+					e.printStackTrace(response.getWriter());
+				}
+
 				
 			}
 		}catch(SQLException e) {
@@ -74,3 +105,4 @@ public class IndexServlet extends HttpServlet {
 	}
 
 }
+
