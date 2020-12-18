@@ -48,7 +48,7 @@ public class IndexServlet extends HttpServlet {
 			ResultSet rs = st.executeQuery();
 			rs.next();
 			String diff = rs.getString("DIFF");
-			if(diff.charAt(0)=='-') {
+			if(diff.charAt(0)!='-') {
 				request.setAttribute("sDiff", diff);
 				RequestDispatcher rd = request.getRequestDispatcher("/Page1_kuri");
 				rd.forward(request, response);

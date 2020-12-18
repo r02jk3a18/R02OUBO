@@ -5,9 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/page1_kuri.css">
 </head>
 <body>
-	<h1>仙台駅前第一デパート セール抽選会 受付会場</h1>
+<a href="./Page1Multi">複数入力の場合はこちら</a>
+	<h1>仙台駅前第一デパート　クリスマスセール抽選会 受付会場</h1>
 	<%
 		String diff = (String) request.getAttribute("sDiff");
 	String error = (String) request.getAttribute("Error");
