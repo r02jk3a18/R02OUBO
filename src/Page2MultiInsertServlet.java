@@ -17,14 +17,14 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class Page1Servlet
  */
-@WebServlet("/page2Insert")
-public class Page2InsertServlet extends HttpServlet {
+@WebServlet("/page2MultiInsert")
+public class Page2MultiInsertServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Page2InsertServlet() {
+    public Page2MultiInsertServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -41,7 +41,14 @@ public class Page2InsertServlet extends HttpServlet {
 		String sEname = request.getParameter("email");
 		String sNumA = request.getParameter("numa");
 		String sNumB = request.getParameter("numb");
-
+		String sNumC = request.getParameter("numc");
+		String sNumD = request.getParameter("numd");
+		String sNumE = request.getParameter("nume");
+		String sNumF = request.getParameter("numf");
+		String sNumG = request.getParameter("numg");
+		String sNumH = request.getParameter("numh");
+		String sNumI = request.getParameter("numi");
+		String sNumJ = request.getParameter("numj");
 		try {
 			
 			Class.forName(driverName);
@@ -53,9 +60,28 @@ public class Page2InsertServlet extends HttpServlet {
 			st.setString(1, sEname);
 			st.setString(2, sNumA);
 			st.setString(3, sNumB);
-			
-			
 			st.executeUpdate();
+			
+			st.setString(1, sEname);
+			st.setString(2, sNumC);
+			st.setString(3, sNumD);
+			st.executeUpdate();
+			
+			st.setString(1, sEname);
+			st.setString(2, sNumE);
+			st.setString(3, sNumF);
+			st.executeUpdate();
+			
+			st.setString(1, sEname);
+			st.setString(2, sNumG);
+			st.setString(3, sNumH);
+			st.executeUpdate();
+			
+			st.setString(1, sEname);
+			st.setString(2, sNumI);
+			st.setString(3, sNumJ);
+			st.executeUpdate();
+			
 			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/JSP/page2.jsp");
 			rd.forward(request, response);
 			
