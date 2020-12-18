@@ -34,3 +34,4 @@ public class Page1_kuri extends HttpServlet {
 	}
 
 }
+
