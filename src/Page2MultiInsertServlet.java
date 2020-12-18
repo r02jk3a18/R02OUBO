@@ -38,17 +38,17 @@ public class Page2MultiInsertServlet extends HttpServlet {
 		final String id = "OUBO";
 		final String pass = "TOUSEN";
 		
-		String sEname = (String)request.getAttribute("email");
-		String sNumA = (String)request.getAttribute("numa");
-		String sNumB = (String)request.getAttribute("numb");
-		String sNumC = (String)request.getAttribute("numc");
-		String sNumD = (String)request.getAttribute("numd");
-		String sNumE = (String)request.getAttribute("nume");
-		String sNumF = (String)request.getAttribute("numf");
-		String sNumG = (String)request.getAttribute("numg");
-		String sNumH = (String)request.getAttribute("numh");
-		String sNumI = (String)request.getAttribute("numi");
-		String sNumJ = (String)request.getAttribute("numj");
+		String sEname = request.getParameter("email");
+		String sNumA = request.getParameter("numa");
+		String sNumB = request.getParameter("numb");
+		String sNumC = request.getParameter("numc");
+		String sNumD = request.getParameter("numd");
+		String sNumE = request.getParameter("nume");
+		String sNumF = request.getParameter("numf");
+		String sNumG = request.getParameter("numg");
+		String sNumH = request.getParameter("numh");
+		String sNumI = request.getParameter("numi");
+		String sNumJ = request.getParameter("numj");
 		try {
 			
 			Class.forName(driverName);
