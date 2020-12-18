@@ -17,14 +17,14 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class Page1Servlet
  */
-@WebServlet("/page2Insert")
-public class Page2InsertServlet extends HttpServlet {
+@WebServlet("/page2MultiInsert")
+public class Page2MultiInsertServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Page2InsertServlet() {
+    public Page2MultiInsertServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -38,10 +38,17 @@ public class Page2InsertServlet extends HttpServlet {
 		final String id = "OUBO";
 		final String pass = "TOUSEN";
 		
-		String sEname = request.getParameter("email");
-		String sNumA = request.getParameter("numa");
-		String sNumB = request.getParameter("numb");
-
+		String sEname = (String)request.getAttribute("email");
+		String sNumA = (String)request.getAttribute("numa");
+		String sNumB = (String)request.getAttribute("numb");
+		String sNumC = (String)request.getAttribute("numc");
+		String sNumD = (String)request.getAttribute("numd");
+		String sNumE = (String)request.getAttribute("nume");
+		String sNumF = (String)request.getAttribute("numf");
+		String sNumG = (String)request.getAttribute("numg");
+		String sNumH = (String)request.getAttribute("numh");
+		String sNumI = (String)request.getAttribute("numi");
+		String sNumJ = (String)request.getAttribute("numj");
 		try {
 			
 			Class.forName(driverName);
@@ -53,9 +60,28 @@ public class Page2InsertServlet extends HttpServlet {
 			st.setString(1, sEname);
 			st.setString(2, sNumA);
 			st.setString(3, sNumB);
-			
-			
 			st.executeUpdate();
+			
+			st.setString(1, sEname);
+			st.setString(2, sNumC);
+			st.setString(3, sNumD);
+			st.executeUpdate();
+			
+			st.setString(1, sEname);
+			st.setString(2, sNumE);
+			st.setString(3, sNumF);
+			st.executeUpdate();
+			
+			st.setString(1, sEname);
+			st.setString(2, sNumG);
+			st.setString(3, sNumH);
+			st.executeUpdate();
+			
+			st.setString(1, sEname);
+			st.setString(2, sNumI);
+			st.setString(3, sNumJ);
+			st.executeUpdate();
+			
 			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/JSP/page2.jsp");
 			rd.forward(request, response);
 			
