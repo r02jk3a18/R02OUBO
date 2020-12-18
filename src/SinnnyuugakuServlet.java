@@ -28,7 +28,7 @@ public class SinnnyuugakuServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/JSP/Sinnnyuugaku.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/JSP/SinnnyuugakuSale.jsp");
 		rd.forward(request, response);
 	}
 

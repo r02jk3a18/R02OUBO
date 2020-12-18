@@ -10,27 +10,28 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class Page1_kuri
+ * Servlet implementation class Page1Servlet
  */
-@WebServlet("/Page1_kuri")
-public class Page1_kuri extends HttpServlet {
+@WebServlet("/BarenFile")
+public class BarenFileServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Page1_kuri() {
+    public BarenFileServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
-//bbbdddaa
+
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/JSP/page1_kuriSale.jsp");
+		String diff = (String)request.getAttribute("sDiff");
+		request.setAttribute("sDiff", diff);
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/JSP/BarenFileSale.jsp");
 		rd.forward(request, response);
-		
 	}
 
 }
