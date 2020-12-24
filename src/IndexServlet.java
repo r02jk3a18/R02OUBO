@@ -43,12 +43,12 @@ public class IndexServlet extends HttpServlet {
 			Connection connection=DriverManager.getConnection(url,id,pass);
 			PreparedStatement st = 
 					connection.prepareStatement(
-							"Select trunc(KAISI-SYSDATE) as DIFF From Kigen"
+							"Select ceil(KAISI-SYSDATE) as DIFF From Kigen"
 						);
 			ResultSet rs = st.executeQuery();
 			rs.next();
 			String diff = rs.getString("DIFF");
-			if(diff.charAt(0)!='-') {
+			if(diff.charAt(0)!='-'&&diff.charAt(0)!='0') {
 				request.setAttribute("sDiff", diff);
 				RequestDispatcher rd = request.getRequestDispatcher("/Page1_kuri");
 				rd.forward(request, response);
@@ -60,12 +60,12 @@ public class IndexServlet extends HttpServlet {
 					Connection connection2=DriverManager.getConnection(url,id,pass);
 					PreparedStatement st2 = 
 							connection2.prepareStatement(
-									"Select trunc(SYSDATE-KIGEN) as DIFF From Kigen"
+									"Select ceil(KIGEN-SYSDATE) as DIFF From Kigen"
 								);
 					ResultSet rs2 = st2.executeQuery();
 					rs2.next();
 					String diff2 = rs2.getString("DIFF");
-					if(diff2.charAt(0)=='-') {
+					if(diff2.charAt(0)!='-'&&diff2.charAt(0)!='0') {
 						request.setAttribute("sDiff", diff2);
 						RequestDispatcher rd = request.getRequestDispatcher("/page1");
 						rd.forward(request, response);

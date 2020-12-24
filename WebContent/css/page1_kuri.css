@@ -1,14 +1,15 @@
 @charset "UTF-8";
 
 body {
-	color: #ffffff;
+	color: #3cb371;
 text-align: center;
-background-color:#800000;
+background-color:#ffffff;
 
 	}
 a{
-	color: #ffffff;
+	color: #3cb371;
 }
 h1{
-	color:#3cb371;
+	color:#800000;
 }
+
