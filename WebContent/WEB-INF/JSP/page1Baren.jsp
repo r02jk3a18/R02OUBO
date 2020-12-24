@@ -5,11 +5,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="${pageContext.request.contextPath}/css/page1_kuri.css">
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/page1_baren.css">
 </head>
 <body>
 <a href="./Page1Multi">複数入力の場合はこちら</a>
-	<h1>🎅仙台駅前第一デパート　クリスマスセール抽選会 受付会場🎅</h1>
+	<h1>💕仙台駅前第一デパート　バレンタインセール抽選会 受付会場💕</h1>
 	<%
 		String diff = (String) request.getAttribute("sDiff");
 	String error = (String) request.getAttribute("Error");
@@ -20,6 +20,7 @@
 	<%
 		int iDiff = Integer.parseInt(diff);
 	%>
+	
 	<%
 		if (iDiff <= 10 && iDiff > 0) {
 	%>
@@ -49,8 +50,8 @@
 		7桁の数字B<input type="number" name="numb" placeholder="7桁の数字B" /><br />
 		<input type="submit" value="登録する" />
 	</form>
-<a href="./Page1Baren">バレンタイン</a><br/>
-<a href="./Page1Sin">新入学</a><br/>
+<a href="./index">クリスマスセール</a><br/>
+<a href="./Page1Sin">新入学セール</a><br/>
 
 </body>
 </html>

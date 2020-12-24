@@ -43,12 +43,12 @@ public class Page1MultiServlet extends HttpServlet {
 			Connection connection=DriverManager.getConnection(url,id,pass);
 			PreparedStatement st = 
 					connection.prepareStatement(
-							"Select trunc(SYSDATE-KIGEN) as DIFF From Kigen"
+							"Select ceil(KIGEN-SYSDATE) as DIFF From Kigen"
 						);
 			ResultSet rs = st.executeQuery();
 			rs.next();
 			String diff = rs.getString("DIFF");
-			if(diff.charAt(0)=='-') {
+			if(diff.charAt(0)!='-'&&diff.charAt(0)!='0') {
 				request.setAttribute("sDiff", diff);
 				RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/JSP/page1Multi.jsp");
 				rd.forward(request, response);

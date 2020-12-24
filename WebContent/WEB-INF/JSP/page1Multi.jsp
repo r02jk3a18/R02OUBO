@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/page1_kuri.css">
 </head>
 <body>
 <h1>仙台駅前第一デパート　セール抽選会　受付会場</h1>
@@ -20,7 +21,6 @@
 
 <% if(diff != null){%>
 	<% int iDiff=Integer.parseInt(diff);%>
-	<% iDiff=iDiff*-1;%>
 <% 
 	if(iDiff <= 10 && iDiff > 0){
 %>

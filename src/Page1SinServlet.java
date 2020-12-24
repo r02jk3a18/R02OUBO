@@ -1,6 +1,5 @@
 
 
-
 import java.io.IOException;
 
 import javax.servlet.RequestDispatcher;
@@ -11,27 +10,34 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class Page1_kuri
+ * Servlet implementation class Page1SinServlet
  */
-@WebServlet("/Page1_kuri")
-public class Page1_kuri extends HttpServlet {
+@WebServlet("/Page1Sin")
+public class Page1SinServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Page1_kuri() {
+    public Page1SinServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
-//bbbdddaa
+
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/JSP/page1not.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/JSP/page1Sin.jsp");
 		rd.forward(request, response);
-		
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/JSP/page1Sin.jsp");
+		rd.forward(request, response);
 	}
 
 }

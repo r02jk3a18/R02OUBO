@@ -8,7 +8,12 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/page1_kuri.css">
 </head>
 <body>
-<a href="./Page1Multi">複数入力の場合はこちら</a>
+<%
+String sKaisi = (String)request.getAttribute("sDiff");
+%>
+<a href=#>複数入力の場合はこちら</a>
+
+<h1 style =" text-align:center"><font size="10">セールまであと<%=sKaisi %>日！</font></h1>
 	<h1>🎅仙台駅前第一デパート　クリスマスセール抽選会 受付会場🎅</h1>
 	<%
 		String diff = (String) request.getAttribute("sDiff");
@@ -20,6 +25,7 @@
 	<%
 		int iDiff = Integer.parseInt(diff);
 	%>
+	
 	<%
 		if (iDiff <= 10 && iDiff > 0) {
 	%>
@@ -44,13 +50,13 @@
 		}
 	%>
 	<form method="post" action="./Page2Check">
-		応募者のメールアドレス<input type="email" name="email" placeholder="メールアドレスを入力" /><br />
-		7桁の数字A<input type="number" name="numa" placeholder="7桁の数字A" /><br />
-		7桁の数字B<input type="number" name="numb" placeholder="7桁の数字B" /><br />
-		<input type="submit" value="登録する" />
+		応募者のメールアドレス<input type="email" name="email" placeholder="メールアドレスを入力" disabled /><br />
+		7桁の数字A<input type="number" name="numa" placeholder="7桁の数字A" disabled /><br />
+		7桁の数字B<input type="number" name="numb" placeholder="7桁の数字B" disabled /><br />
+		<input type="submit" value="登録する" disabled/>
 	</form>
-<a href="./Page1Baren">バレンタイン</a><br/>
-<a href="./Page1Sin">新入学</a><br/>
+<a href=#>バレンタイン</a><br/>
+<a href=#>新入学</a><br/>
 
 </body>
 </html>
